@@ -19,13 +19,26 @@
         <org.apache.spark.spark-streaming-kafka.version>2.4.8</org.apache.spark.spark-streaming-kafka.version>
         <com.datastax.spark.spark-cassandra-connector.version>2.5.2</com.datastax.spark.spark-cassandra-connector.version>
         <com.datastax.spark.spark-cassandra-connector-java.version>1.6.0-M1</com.datastax.spark.spark-cassandra-connector-java.version>
+        <slf4j.version>1.7.32</slf4j.version>
+        <kafka.clients.version>2.8.0</kafka.clients.version>
+
     </properties>
 
     <dependencies>
         <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.apache.kafka</groupId>
             <artifactId>kafka-clients</artifactId>
-            <version>0.10.0.0</version>
+            <version>${kafka.clients.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.spark</groupId>
