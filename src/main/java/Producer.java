@@ -10,8 +10,10 @@ public class Producer {
 
         Properties configuration = new Properties();
         configuration.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
-        configuration.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.ByteArraySerializer");
-        configuration.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringSerializer");
+        configuration.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG,
+                "org.apache.kafka.common.serialization.ByteArraySerializer");
+        configuration.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,
+                "org.apache.kafka.common.serialization.StringSerializer");
 
         KafkaProducer<String, String> producer = new KafkaProducer<>(configuration);
         ProducerRecord<String, String> record = new ProducerRecord<>(topicName, "producertest");
