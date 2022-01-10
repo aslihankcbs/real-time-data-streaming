@@ -5,8 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.aslihankocabas</groupId>
-    <artifactId>kafka-spark-cassandra-data-pipeline</artifactId>
+    <artifactId>real-time-processing</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -15,13 +16,12 @@
         <org.apache.spark.spark-sql.version>2.4.8</org.apache.spark.spark-sql.version>
         <org.apache.spark.spark-streaming.version>2.4.8</org.apache.spark.spark-streaming.version>
         <org.apache.spark.spark-mllib.version>2.4.8</org.apache.spark.spark-mllib.version>
-        <org.apache.spark.spark-graphx.version>2.4.8</org.apache.spark.spark-graphx.version>
         <org.apache.spark.spark-streaming-kafka.version>2.4.8</org.apache.spark.spark-streaming-kafka.version>
         <com.datastax.spark.spark-cassandra-connector.version>2.5.2</com.datastax.spark.spark-cassandra-connector.version>
         <com.datastax.spark.spark-cassandra-connector-java.version>1.6.0-M1</com.datastax.spark.spark-cassandra-connector-java.version>
         <slf4j.version>1.7.32</slf4j.version>
         <kafka.clients.version>2.8.0</kafka.clients.version>
-
+        <org.apache.hbase.hhabse-client.version>1.2.0</org.apache.hbase.hhabse-client.version>
     </properties>
 
     <dependencies>
@@ -70,14 +70,25 @@
             <version>${org.apache.spark.spark-streaming-kafka.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.datastax.spark</groupId>
-            <artifactId>spark-cassandra-connector_2.11</artifactId>
-            <version>${com.datastax.spark.spark-cassandra-connector.version}</version>
+            <groupId>org.apache.hbase</groupId>
+            <artifactId>hbase-client</artifactId>
+            <version>${org.apache.hbase.hhabse-client.version}</version>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.datastax.spark</groupId>-->
+<!--            <artifactId>spark-cassandra-connector_2.11</artifactId>-->
+<!--            <version>${com.datastax.spark.spark-cassandra-connector.version}</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>com.datastax.spark</groupId>-->
+<!--            <artifactId>spark-cassandra-connector-java_2.11</artifactId>-->
+<!--            <version>${com.datastax.spark.spark-cassandra-connector-java.version}</version>-->
+<!--        </dependency>-->
         <dependency>
-            <groupId>com.datastax.spark</groupId>
-            <artifactId>spark-cassandra-connector-java_2.11</artifactId>
-            <version>${com.datastax.spark.spark-cassandra-connector-java.version}</version>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
